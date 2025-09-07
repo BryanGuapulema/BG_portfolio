@@ -1,12 +1,20 @@
 ---
 const {
-  name = "Richard Hanrick",
-  title = "Web developer",
-  avatar = "/assets/images/my-avatar.png",
-  email = "richard@example.com",
-  phone = "+12133522795"
+  name="Bryan Guapulema",
+  title="Backend developer",
+  avatar="/assets/images/my-avatar.png",
+  email="bryan19012003@gmail.com",
+  phone="+593 987613597",
+  birthday = "2003-01-19",
+  location = "Riobamba, Ecuador",
+  socialLinks = [
+    { name: "facebook", url: "#" },
+    { name: "twitter", url: "#" },
+    { name: "instagram", url: "#" }
+  ]
 } = Astro.props;
 ---
+
 <aside class="sidebar" data-sidebar>
   <div class="sidebar-info">
     <figure class="avatar-box">
@@ -43,14 +51,34 @@ const {
           <a href={`tel:${phone}`} class="contact-link">{phone}</a>
         </div>
       </li>
+
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+        <div class="contact-info">
+          <p class="contact-title">Birthday</p>
+          <time datetime={birthday}>{new Date(birthday).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+          <address>{location}</address>
+        </div>
+      </li>
     </ul>
 
     <div class="separator"></div>
 
     <ul class="social-list">
-      <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-      <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-      <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      {socialLinks.map(link => (
+        <li class="social-item">
+          <a href={link.url} class="social-link" target="_blank" rel="noopener noreferrer">
+            <ion-icon name={`logo-${link.name}`}></ion-icon>
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 </aside>

@@ -3,28 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Navbar from '../components/Navbar.astro';
 import About from '../components/About.astro';
-import Resume from '../components/Resume.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Contact from '../components/Contact.astro';
+
 ---
 
 <BaseLayout title="vCard - Personal Portfolio">
   <main>
-    <Sidebar
-      name="Richard Hanrick"
-      title="Web developer"
-      avatar="/assets/images/my-avatar.png"
-      email="richard@example.com"
-      phone="+12133522795"
-    />
+    <Sidebar />
 
     <div class="main-content">
-      <Navbar />
-
-      <About />
-      <Resume />
+      <Navbar/>
+      <About/>
       <Portfolio />
-      <Contact />
+      <Contact/>
     </div>
   </main>
 </BaseLayout>
