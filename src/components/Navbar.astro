@@ -16,17 +16,5 @@ const { currentPage } = Astro.props;
   </ul>
 </nav>
 
-<script type="module">
-  const navLinks = document.querySelectorAll('[data-nav-link]');
-  const pages = document.querySelectorAll('[data-page]');
+<script type="module" src="/assets/js/Navbar.js"></script>
 
-  navLinks.forEach((link, index) => {
-    link.addEventListener('click', () => {
-      pages.forEach((page, i) => {
-        page.classList.toggle('active', i === index);
-        navLinks[i].classList.toggle('active', i === index);
-      });
-      window.scrollTo(0, 0);
-    });
-  });
-</script>
