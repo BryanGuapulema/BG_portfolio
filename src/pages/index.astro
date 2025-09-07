@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Navbar from '../components/Navbar.astro';
+import About from '../components/About.astro';
 ---
+
 <BaseLayout title="vCard - Personal Portfolio">
   <main>
     <Sidebar
@@ -13,20 +16,8 @@ import Sidebar from '../components/Sidebar.astro';
     />
 
     <div class="main-content">
-      <!-- Por ahora pegamos la sección About directamente; luego la convertimos en componente -->
-      <article class="about active" data-page="about">
-        <header><h2 class="h2 article-title">About me</h2></header>
-
-        <section class="about-text">
-          <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-          </p>
-
-          <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-          </p>
-        </section>
-      </article>
+      <Navbar />
+      <About />
     </div>
   </main>
 </BaseLayout>
