@@ -1,0 +1,7 @@
+---
+const { description = [] } = Astro.props;
+---
+
+<section class="about-text">
+  {description.map(text => <p>{text}</p>)}
+</section>

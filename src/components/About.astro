@@ -1,5 +1,5 @@
 ---
-import AboutText from './AboutText.astro';
+import Description from './Description.astro';
 import Technologies from './Technologies.astro';
 import Services from './Services.astro';
 import Timeline from './Timeline.astro';
@@ -9,9 +9,9 @@ import Skills from './Skills.astro';
 const {
   name = "Richard Hanrick",
   title = "Web Developer",
-  aboutText = [
-    "I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.",
-    "My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that it is eye-catching and easy to use."
+  description = [
+    "Ingeniero en Tecnologías de la Información con conocimientos en el desarrollo de software de distinto tipo con énfasis en recorridos virtuales con Unreal Engine, videojuegos IA y desarrollo fullstack de aplicaciones.",
+    " Cuento con experiencia en la aplicación de metodologías ágiles para el desarrollo de proyectos; ejecución de auditoría informática y auditoría interna; y como ponente en jornadas de capacitación a estudiantes universtarios. Me caracterizo por mi capacidad para adaptarme a desafíos tecnológicos, búsqueda  de soluciones orientadas al negocio y mi disposición al aprendizaje continuo. "
   ],
   services = [
     { title: "Web design", text: "The most modern and high-quality design made at a professional level.", icon: "/assets/images/icon-design.svg" },
@@ -28,15 +28,7 @@ const {
     { title: "Creative director", period: "2015 — Present", description: "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti." },
     { title: "Art director", period: "2013 — 2015", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." },
     { title: "Web designer", period: "2010 — 2013", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." }
-  ],
-  technologies = [
-    { name: "Node.js", image: "/assets/images/nodejs.png" },
-    { name: "Laravel", image: "/assets/images/laravel.png" },
-    { name: "Unreal Engine", image: "/assets/images/unreal.png" },
-    { name: "React", image: "/assets/images/react.png" },
-    { name: "MySQL", image: "/assets/images/mysql.png" },
-    { name: "Docker", image: "/assets/images/docker.png" },
-  ],
+  ],  
   skills = [
     { title: "Web design", percent: 80 },
     { title: "Graphic design", percent: 70 },
@@ -49,12 +41,12 @@ const {
 <article class="about active" data-page="about">
 
   <header>
-    <h2 class="h2 article-title">About me</h2>
+    <h2 class="h2 article-title">Acerca de mí</h2>
   </header>
 
-  <AboutText aboutText={aboutText} />
+  <Description description={description} />
 
-  <Technologies techList={technologies} />
+  <Technologies />
 
   <Services services={services} />
 

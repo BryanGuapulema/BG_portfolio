@@ -1,21 +1,30 @@
 ---
 const { techList = [
-  { name: "Node.js", image: "/assets/images/nodejs.png" },
-  { name: "Laravel", image: "/assets/images/laravel.png" },
-  { name: "Unreal Engine", image: "/assets/images/unreal.png" },
-  { name: "React", image: "/assets/images/react.png" },
-  { name: "MySQL", image: "/assets/images/mysql.png" },
-  { name: "Docker", image: "/assets/images/docker.png" },
-]} = Astro.props;
+    { name: "Unreal Engine", image: "https://img.shields.io/badge/unrealengine-%23313131.svg?style=for-the-badge&logo=unrealengine&logoColor=white" },
+    { name: "Node.js", image: "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" },
+    { name: "Express.js", image: "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" },
+    { name: "Javascript-", image: "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
+    { name: "Laravel", image: "https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" },
+    { name: "MongoDB", image: "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" },
+    { name: "MySQL", image: "https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" },
+    { name: "Microsoft SQL Server", image: "https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white" },
+    { name: "HTML5", image: "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" },
+    { name: "React", image: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" },
+    { name: "Astro", image: "https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white" },
+    { name: "Tailwind", image: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" },
+    { name: "Git", image: "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" },
+    { name: "Python", image: "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" },
+    { name: "Blender", image: "https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" }
+  ],} = Astro.props;
 
 ---
 
 <section class="technologies">
-  <h3 class="h3 section-title">Technologies</h3>
+  <h3 class="h3 service-title">Technologies</h3>
   <ul class="technologies-list">
     {techList.map(tech => (
       <li class="technology-item">
-        <img src={tech.image} alt={tech.name} width="50" height="50"/>
+        <img src={tech.image} alt={tech.name}/>
       </li>
     ))}
   </ul>
@@ -24,6 +33,7 @@ const { techList = [
 <style>
 .technologies {
   margin-top: 2rem;
+  margin-bottom: 2%;
 }
 
 .technologies-list {
@@ -32,6 +42,9 @@ const { techList = [
   gap: 1rem;
   list-style: none;
   padding: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .technology-item {

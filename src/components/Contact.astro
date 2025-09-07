@@ -1,29 +1,25 @@
 ---
 const {
-  email = "richard@example.com",
-  phone = "+1 (213) 352-2795",
-  location = "Sacramento, California, USA",
-  birthday = "1982-06-23",
-  mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+  mapSrc = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25216.55863043134!2d-78.66941439999998!3d-1.671167999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1757282381436!5m2!1sen!2sbd"
 } = Astro.props;
 ---
+
 
 <article class="contact" data-page="contact">
 
   <header>
-    <h2 class="h2 article-title">Contact</h2>
+    <h2 class="h2 article-title">Contacto</h2>
   </header>
-
-  <!-- Map Section -->
+  
+  
   <section class="mapbox" data-mapbox>
     <figure>
       <iframe src={mapSrc} width="400" height="300" loading="lazy"></iframe>
     </figure>
   </section>
-
-  <!-- Contact Form Section -->
+  
   <section class="contact-form">
-    <h3 class="h3 form-title">Contact Form</h3>
+    <h3 class="h3 form-title">Contáctame</h3>
     <form action="#" class="form" data-form>
       <div class="input-wrapper">
         <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
@@ -35,41 +31,7 @@ const {
         <span>Send Message</span>
       </button>
     </form>
-  </section>
-
-  <!-- Optional Contact Info -->
-  <section class="contact-info">
-    <ul class="contacts-list">
-      <li class="contact-item">
-        <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
-        <div class="contact-info">
-          <p class="contact-title">Email</p>
-          <a href={`mailto:${email}`} class="contact-link">{email}</a>
-        </div>
-      </li>
-      <li class="contact-item">
-        <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-        <div class="contact-info">
-          <p class="contact-title">Phone</p>
-          <a href={`tel:${phone}`} class="contact-link">{phone}</a>
-        </div>
-      </li>
-      <li class="contact-item">
-        <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
-        <div class="contact-info">
-          <p class="contact-title">Birthday</p>
-          <time datetime={birthday}>{new Date(birthday).toLocaleDateString()}</time>
-        </div>
-      </li>
-      <li class="contact-item">
-        <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
-        <div class="contact-info">
-          <p class="contact-title">Location</p>
-          <address>{location}</address>
-        </div>
-      </li>
-    </ul>
-  </section>
+  </section>  
 
 </article>
 

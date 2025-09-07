@@ -1,15 +1,15 @@
 ---
 const {
   name="Bryan Guapulema",
-  title="Backend developer",
+  title="Backend Developer",
   avatar="/assets/images/my-avatar.png",
   email="bryan19012003@gmail.com",
   phone="+593 987613597",
-  birthday = "2003-01-19",
+  birthday = "2003-01-20",
   location = "Riobamba, Ecuador",
   socialLinks = [
     { name: "facebook", url: "#" },
-    { name: "twitter", url: "#" },
+    { name: "whatsapp", url: "#" },
     { name: "instagram", url: "#" }
   ]
 } = Astro.props;
@@ -27,7 +27,7 @@ const {
     </div>
 
     <button class="info_more-btn" data-sidebar-btn>
-      <span>Show Contacts</span>
+      <span>Mostrar Contactos</span>
       <ion-icon name="chevron-down"></ion-icon>
     </button>
   </div>
@@ -39,31 +39,35 @@ const {
       <li class="contact-item">
         <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
         <div class="contact-info">
-          <p class="contact-title">Email</p>
+          <p class="contact-title">Correo</p>
           <a href={`mailto:${email}`} class="contact-link">{email}</a>
         </div>
-      </li>
+      </li>      
 
-      <li class="contact-item">
-        <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-        <div class="contact-info">
-          <p class="contact-title">Phone</p>
-          <a href={`tel:${phone}`} class="contact-link">{phone}</a>
-        </div>
-      </li>
+      <li >
+        <a href={`tel:${phone}`}>
+          <div class="contact-item" >
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+              <div class="contact-info">
+              <p class="contact-title">Teléfono</p>
+              <p class="contact-link">{phone}</p>
+            </div>
+          </div>
+        </a>
+      </li>     
 
       <li class="contact-item">
         <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
         <div class="contact-info">
-          <p class="contact-title">Birthday</p>
-          <time datetime={birthday}>{new Date(birthday).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
+          <p class="contact-title">Nacimiento</p>
+          <time datetime={birthday}>{new Date(birthday).toLocaleDateString("es-ES", { month: "long", day: "numeric", year: "numeric" })}</time>
         </div>
       </li>
 
       <li class="contact-item">
         <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
         <div class="contact-info">
-          <p class="contact-title">Location</p>
+          <p class="contact-title">Lugar</p>
           <address>{location}</address>
         </div>
       </li>

@@ -23,9 +23,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Agregar evento click a cada enlace de navegación
 navigationLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const pageName = link.innerText.toLowerCase();
-    activatePage(pageName);
+  link.addEventListener('click', function () {
+    const targetPage = this.dataset.page;
+
+    pages.forEach(page => {
+      if (page.dataset.page === targetPage) {
+        page.classList.add('active');
+      } else {
+        page.classList.remove('active');
+      }
+    });
+
+    navigationLinks.forEach(nav => nav.classList.remove('active'));
+    this.classList.add('active');
+
     window.scrollTo(0, 0);
   });
 });
