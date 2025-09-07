@@ -3,16 +3,29 @@
 const navigationLinks = document.querySelectorAll('[data-nav-link]');
 const pages = document.querySelectorAll('[data-page]');
 
-const activatePage = (clickedIndex) => {
+// Función para activar una página
+const activatePage = (pageName) => {
   pages.forEach((page, index) => {
-    page.classList.toggle('active', index === clickedIndex);
-    navigationLinks[index].classList.toggle('active', index === clickedIndex);
+    if (page.dataset.page === pageName) {
+      page.classList.add('active');
+      navigationLinks[index].classList.add('active');
+    } else {
+      page.classList.remove('active');
+      navigationLinks[index].classList.remove('active');
+    }
   });
 };
 
-navigationLinks.forEach((link, index) => {
+// Activar página por defecto al cargar
+window.addEventListener('DOMContentLoaded', () => {
+  activatePage('about'); // About como página por defecto
+});
+
+// Agregar evento click a cada enlace de navegación
+navigationLinks.forEach(link => {
   link.addEventListener('click', () => {
-    activatePage(index);
+    const pageName = link.innerText.toLowerCase();
+    activatePage(pageName);
     window.scrollTo(0, 0);
   });
 });

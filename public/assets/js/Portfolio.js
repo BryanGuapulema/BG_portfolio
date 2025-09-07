@@ -10,6 +10,14 @@ const selectValue = document.querySelector('[data-selecct-value]');
 const filterBtn = document.querySelectorAll('[data-filter-btn]');
 const filterItems = document.querySelectorAll('[data-filter-item]');
 
+// Variables para el modal
+const modalContainer = document.querySelector('[data-modal-container]');
+const overlay = document.querySelector('[data-overlay]');
+const modalImg = document.querySelector('[data-modal-img]');
+const modalTitle = document.querySelector('[data-modal-title]');
+const modalText = document.querySelector('[data-modal-text]');
+const modalRepoBtn = document.querySelector('[data-modal-repo]');
+
 // Toggle dropdown del select
 if (select) {
   select.addEventListener('click', () => elementToggleFunc(select));
@@ -51,3 +59,34 @@ if (filterBtn.length > 0) {
     });
   });
 }
+
+// Función para abrir/cerrar modal
+const toggleModal = () => {
+  modalContainer.classList.toggle('active');
+  overlay.classList.toggle('active');
+};
+
+// Abrir modal al click en proyecto
+filterItems.forEach(project => {
+  project.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Información del proyecto
+    const img = this.querySelector('img');
+    const title = this.querySelector('.project-title').innerText;
+    const category = this.querySelector('.project-category').innerText;
+    const repoLink = this.dataset.repo || '#'; // Puedes agregar data-repo a cada proyecto
+
+    // Llenar modal
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modalTitle.innerText = title;
+    modalText.innerText = `Category: ${category}`;
+    modalRepoBtn.href = repoLink;
+
+    toggleModal();
+  });
+});
+
+// Cerrar modal al click en overlay
+overlay.addEventListener('click', toggleModal);

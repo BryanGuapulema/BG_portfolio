@@ -1,31 +1,35 @@
+// About.js
 'use strict';
 
-const navigationLinks = document.querySelectorAll('[data-nav-link]');
-const pages = document.querySelectorAll('[data-page]');
+// Variables del modal de testimonios
+const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
+const modalContainer = document.querySelector('[data-modal-container]');
+const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
+const overlay = document.querySelector('[data-overlay]');
 
-// Función para activar una página
-const activatePage = (pageName) => {
-  pages.forEach((page, index) => {
-    if (page.dataset.page === pageName) {
-      page.classList.add('active');
-      navigationLinks[index].classList.add('active');
-    } else {
-      page.classList.remove('active');
-      navigationLinks[index].classList.remove('active');
-    }
-  });
+// Variables del contenido del modal
+const modalImg = document.querySelector('[data-modal-img]');
+const modalTitle = document.querySelector('[data-modal-title]');
+const modalText = document.querySelector('[data-modal-text]');
+
+// Función para abrir/cerrar el modal
+const testimonialsModalFunc = () => {
+  modalContainer.classList.toggle('active');
+  overlay.classList.toggle('active');
 };
 
-// Activar página por defecto al cargar
-window.addEventListener('DOMContentLoaded', () => {
-  activatePage('about'); // About como página por defecto
-});
+// Agregar click a cada testimonial
+testimonialsItem.forEach(item => {
+  item.addEventListener('click', function () {
+    modalImg.src = this.querySelector('[data-testimonials-avatar]').src;
+    modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt;
+    modalTitle.innerHTML = this.querySelector('[data-testimonials-title]').innerHTML;
+    modalText.innerHTML = this.querySelector('[data-testimonials-text]').innerHTML;
 
-// Agregar evento click a cada enlace de navegación
-navigationLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const pageName = link.innerText.toLowerCase();
-    activatePage(pageName);
-    window.scrollTo(0, 0);
+    testimonialsModalFunc();
   });
 });
+
+// Cerrar modal al click en el botón o overlay
+modalCloseBtn.addEventListener('click', testimonialsModalFunc);
+overlay.addEventListener('click', testimonialsModalFunc);

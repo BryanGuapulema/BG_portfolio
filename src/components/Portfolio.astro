@@ -2,15 +2,15 @@
 const {
   categories = ["All", "Web design", "Applications", "Web development"],
   projects = [
-    { title: "Finance", category: "Web development", image: "/assets/images/project-1.jpg", alt: "finance" },
-    { title: "Orizon", category: "Web development", image: "/assets/images/project-2.png", alt: "orizon" },
-    { title: "Fundo", category: "Web design", image: "/assets/images/project-3.jpg", alt: "fundo" },
-    { title: "Brawlhalla", category: "Applications", image: "/assets/images/project-4.png", alt: "brawlhalla" },
-    { title: "DSM.", category: "Web design", image: "/assets/images/project-5.png", alt: "dsm." },
-    { title: "MetaSpark", category: "Web design", image: "/assets/images/project-6.png", alt: "metaspark" },
-    { title: "Summary", category: "Web development", image: "/assets/images/project-7.png", alt: "summary" },
-    { title: "Task Manager", category: "Applications", image: "/assets/images/project-8.jpg", alt: "task manager" },
-    { title: "Arrival", category: "Web development", image: "/assets/images/project-9.png", alt: "arrival" },
+    { title: "Finance", category: "Web development", image: "/assets/images/project-1.jpg", alt: "finance", repo: "https://github.com/user/finance" },
+    { title: "Orizon", category: "Web development", image: "/assets/images/project-2.png", alt: "orizon", repo: "https://github.com/user/orizon" },
+    { title: "Fundo", category: "Web design", image: "/assets/images/project-3.jpg", alt: "fundo", repo: "https://github.com/user/fundo" },
+    { title: "Brawlhalla", category: "Applications", image: "/assets/images/project-4.png", alt: "brawlhalla", repo: "https://github.com/user/brawlhalla" },
+    { title: "DSM.", category: "Web design", image: "/assets/images/project-5.png", alt: "dsm.", repo: "https://github.com/user/dsm" },
+    { title: "MetaSpark", category: "Web design", image: "/assets/images/project-6.png", alt: "metaspark", repo: "https://github.com/user/metaspark" },
+    { title: "Summary", category: "Web development", image: "/assets/images/project-7.png", alt: "summary", repo: "https://github.com/user/summary" },
+    { title: "Task Manager", category: "Applications", image: "/assets/images/project-8.jpg", alt: "task manager", repo: "https://github.com/user/task-manager" },
+    { title: "Arrival", category: "Web development", image: "/assets/images/project-9.png", alt: "arrival", repo: "https://github.com/user/arrival" },
   ]
 } = Astro.props;
 ---
@@ -52,7 +52,7 @@ const {
     <!-- Project List -->
     <ul class="project-list">
       {projects.map(project => (
-        <li class="project-item active" data-filter-item data-category={project.category.toLowerCase()}>
+        <li class="project-item active" data-filter-item data-category={project.category.toLowerCase()} data-repo={project.repo}>
           <a href="#">
             <figure class="project-img">
               <div class="project-item-icon-box">
@@ -68,7 +68,30 @@ const {
     </ul>
 
   </section>
+
+  <!-- Modal -->
+  <div class="modal-container" data-modal-container>
+    <div class="overlay" data-overlay></div>
+
+    <section class="project-modal">
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-img-wrapper">
+        <figure class="modal-avatar-box">
+          <img src="" alt="" width="80" data-modal-img>
+        </figure>
+      </div>
+
+      <div class="modal-content">
+        <h4 class="h3 modal-title" data-modal-title></h4>
+        <p data-modal-text></p>
+        <a href="#" class="modal-repo-btn" target="_blank" data-modal-repo>View Repository</a>
+      </div>
+    </section>
+  </div>
+
 </article>
 
 <script type="module" src="/assets/js/Portfolio.js"></script>
-
