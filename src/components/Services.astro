@@ -1,0 +1,20 @@
+---
+const { services = [] } = Astro.props;
+---
+
+<section class="service">
+  <h3 class="h3 service-title">What I'm doing</h3>
+  <ul class="service-list">
+    {services.map(service => (
+      <li class="service-item">
+        <div class="service-icon-box">
+          <img src={service.icon} alt={`${service.title} icon`} width="40" />
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">{service.title}</h4>
+          <p class="service-item-text">{service.text}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

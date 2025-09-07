@@ -1,0 +1,48 @@
+---
+const { techList = [
+  { name: "Node.js", image: "/assets/images/nodejs.png" },
+  { name: "Laravel", image: "/assets/images/laravel.png" },
+  { name: "Unreal Engine", image: "/assets/images/unreal.png" },
+  { name: "React", image: "/assets/images/react.png" },
+  { name: "MySQL", image: "/assets/images/mysql.png" },
+  { name: "Docker", image: "/assets/images/docker.png" },
+]} = Astro.props;
+
+---
+
+<section class="technologies">
+  <h3 class="h3 section-title">Technologies</h3>
+  <ul class="technologies-list">
+    {techList.map(tech => (
+      <li class="technology-item">
+        <img src={tech.image} alt={tech.name} width="50" height="50"/>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+.technologies {
+  margin-top: 2rem;
+}
+
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.technology-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.technology-item img {
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+</style>

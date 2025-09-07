@@ -1,4 +1,11 @@
 ---
+import AboutText from './AboutText.astro';
+import Technologies from './Technologies.astro';
+import Services from './Services.astro';
+import Timeline from './Timeline.astro';
+import Skills from './Skills.astro';
+
+
 const {
   name = "Richard Hanrick",
   title = "Web Developer",
@@ -22,6 +29,14 @@ const {
     { title: "Art director", period: "2013 — 2015", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." },
     { title: "Web designer", period: "2010 — 2013", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." }
   ],
+  technologies = [
+    { name: "Node.js", image: "/assets/images/nodejs.png" },
+    { name: "Laravel", image: "/assets/images/laravel.png" },
+    { name: "Unreal Engine", image: "/assets/images/unreal.png" },
+    { name: "React", image: "/assets/images/react.png" },
+    { name: "MySQL", image: "/assets/images/mysql.png" },
+    { name: "Docker", image: "/assets/images/docker.png" },
+  ],
   skills = [
     { title: "Web design", percent: 80 },
     { title: "Graphic design", percent: 70 },
@@ -36,81 +51,17 @@ const {
   <header>
     <h2 class="h2 article-title">About me</h2>
   </header>
-  
-  <!-- About Text -->
-  <section class="about-text">
-    {aboutText.map(text => <p>{text}</p>)}
-  </section>
 
-  <!-- Services -->
-  <section class="service">
-    <h3 class="h3 service-title">What I'm doing</h3>
-    <ul class="service-list">
-      {services.map(service => (
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img src={service.icon} alt={`${service.title} icon`} width="40" />
-          </div>
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">{service.title}</h4>
-            <p class="service-item-text">{service.text}</p>
-          </div>
-        </li>
-      ))}
-    </ul>
-  </section>
+  <AboutText aboutText={aboutText} />
 
-  <!-- Education -->
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
-      <h3 class="h3">Education</h3>
-    </div>
-    <ol class="timeline-list">
-      {education.map(item => (
-        <li class="timeline-item">
-          <h4 class="h4 timeline-item-title">{item.title}</h4>
-          <span>{item.period}</span>
-          <p class="timeline-text">{item.description}</p>
-        </li>
-      ))}
-    </ol>
-  </section>
+  <Technologies techList={technologies} />
 
-  <!-- Experience -->
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
-      <h3 class="h3">Experience</h3>
-    </div>
-    <ol class="timeline-list">
-      {experience.map(item => (
-        <li class="timeline-item">
-          <h4 class="h4 timeline-item-title">{item.title}</h4>
-          <span>{item.period}</span>
-          <p class="timeline-text">{item.description}</p>
-        </li>
-      ))}
-    </ol>
-  </section>
+  <Services services={services} />
 
-  <!-- Skills -->
-  <section class="skill">
-    <h3 class="h3 skills-title">My skills</h3>
-    <ul class="skills-list content-card">
-      {skills.map(skill => (
-        <li class="skills-item">
-          <div class="title-wrapper">
-            <h5 class="h5">{skill.title}</h5>
-            <data value={skill.percent}>{skill.percent}%</data>
-          </div>
-          <div class="skill-progress-bg">
-            <div class="skill-progress-fill" style={`width: ${skill.percent}%;`}></div>
-          </div>
-        </li>
-      ))}
-    </ul>
-  </section>
+  <Timeline title="Experience" items={experience} />
+  <Timeline title="Education" items={education} />
+
+  <Skills skills={skills} />
 
 </article>
 

@@ -1,0 +1,7 @@
+---
+const { aboutText = [] } = Astro.props;
+---
+
+<section class="about-text">
+  {aboutText.map(text => <p>{text}</p>)}
+</section>
