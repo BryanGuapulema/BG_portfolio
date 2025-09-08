@@ -6,35 +6,16 @@ import Timeline from './Timeline.astro';
 import Skills from './Skills.astro';
 
 
-const {
-  name = "Richard Hanrick",
-  title = "Web Developer",
-  description = [
-    "Ingeniero en Tecnologías de la Información con conocimientos en el desarrollo de software de distinto tipo con énfasis en recorridos virtuales con Unreal Engine, videojuegos IA y desarrollo fullstack de aplicaciones.",
-    " Cuento con experiencia en la aplicación de metodologías ágiles para el desarrollo de proyectos; ejecución de auditoría informática y auditoría interna; y como ponente en jornadas de capacitación a estudiantes universtarios. Me caracterizo por mi capacidad para adaptarme a desafíos tecnológicos, búsqueda  de soluciones orientadas al negocio y mi disposición al aprendizaje continuo. "
-  ],
-  services = [
-    { title: "Web design", text: "The most modern and high-quality design made at a professional level.", icon: "/assets/images/icon-design.svg" },
-    { title: "Web development", text: "High-quality development of sites at the professional level.", icon: "/assets/images/icon-dev.svg" },
-    { title: "Mobile apps", text: "Professional development of applications for iOS and Android.", icon: "/assets/images/icon-app.svg" },
-    { title: "Photography", text: "I make high-quality photos of any category at a professional level.", icon: "/assets/images/icon-photo.svg" }
-  ],
+const {   
   education = [
-    { title: "University school of the arts", period: "2007 — 2008", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." },
-    { title: "New York academy of art", period: "2006 — 2007", description: "Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus." },
-    { title: "High school of art and design", period: "2002 — 2004", description: "Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit." }
+    { title: "Universidad Nacional de Chimborazo", period: " Nov. 2020 - Jun. 2025", description: "Ingeniería en Tecnologías de la Información" },
+    { title: "Certificación AZURE AZ-900", period: "Jun. 2024", description: "Número de Certificación: 535562-6U5E31" }
   ],
   experience = [
     { title: "Creative director", period: "2015 — Present", description: "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti." },
     { title: "Art director", period: "2013 — 2015", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." },
     { title: "Web designer", period: "2010 — 2013", description: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti." }
-  ],  
-  skills = [
-    { title: "Web design", percent: 80 },
-    { title: "Graphic design", percent: 70 },
-    { title: "Branding", percent: 90 },
-    { title: "WordPress", percent: 50 }
-  ]
+  ]  
 } = Astro.props;
 ---
 
@@ -44,16 +25,12 @@ const {
     <h2 class="h2 article-title">Acerca de mí</h2>
   </header>
 
-  <Description description={description} />
-
+  <Description/>
   <Technologies />
-
-  <Services services={services} />
-
-  <Timeline title="Experience" items={experience} />
-  <Timeline title="Education" items={education} />
-
-  <Skills skills={skills} />
+  <Services />
+  <Timeline title="Experiencia" items={experience} />
+  <Timeline title="Educación" items={education} />
+  <Skills />
 
 </article>
 

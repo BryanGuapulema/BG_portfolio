@@ -1,5 +1,11 @@
 ---
-const { skills = [] } = Astro.props;
+const { skills = [
+    { title: "Unreal Engine", percent: 90 },
+    { title: "Javascript", percent: 75 },
+    { title: "Node.js", percent: 60 },
+    { title: "Laravel", percent: 60 },
+    { title: "Python", percent: 45 }
+  ] } = Astro.props;
 ---
 
 <section class="skill">

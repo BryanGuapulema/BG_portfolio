@@ -1,9 +1,12 @@
 ---
-const { services = [] } = Astro.props;
+const { services = [
+    { title: "Backend con Node.js", text: "Desarrollo de proyectos backend: REST APIs, JWT, MySQL, MongoDB.", icon: "/assets/images/icon-dev.svg" },
+    { title: "Ciencia de datos", text: "Formación en ciencia de datos con Python.", icon: "/assets/images/icon-dev.svg" },    
+  ] } = Astro.props;
 ---
 
 <section class="service">
-  <h3 class="h3 service-title">What I'm doing</h3>
+  <h3 class="h3 service-title">¿Que estoy haciendo ahora?</h3>
   <ul class="service-list">
     {services.map(service => (
       <li class="service-item">
