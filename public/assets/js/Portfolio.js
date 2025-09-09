@@ -26,7 +26,7 @@ if (select) {
 // Función de filtrado
 const filterFunc = (selectedValue) => {
   filterItems.forEach(item => {
-    if (selectedValue === 'all' || selectedValue === item.dataset.category) {
+    if (selectedValue === 'todo' || selectedValue === item.dataset.category) {
       item.classList.add('active');
     } else {
       item.classList.remove('active');
@@ -75,13 +75,14 @@ filterItems.forEach(project => {
     const img = this.querySelector('img');
     const title = this.querySelector('.project-title').innerText;
     const category = this.querySelector('.project-category').innerText;
-    const repoLink = this.dataset.repo || '#'; // Puedes agregar data-repo a cada proyecto
+    const description = this.dataset.description || "Sin descripción disponible.";
+    const repoLink = this.dataset.repo || '#';
 
     // Llenar modal
     modalImg.src = img.src;
     modalImg.alt = img.alt;
     modalTitle.innerText = title;
-    modalText.innerText = `Category: ${category}`;
+    modalText.innerText = `Categoria: ${category} \n\n ${description}`;
     modalRepoBtn.href = repoLink;
 
     toggleModal();

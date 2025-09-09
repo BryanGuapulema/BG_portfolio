@@ -1,16 +1,34 @@
 ---
 const {
-  categories = ["All", "Web design", "Applications", "Web development"],
+  categories = ["Todo", "Backend", "VR", "Fullstack"],
   projects = [
-    { title: "Finance", category: "Web development", image: "/assets/images/project-1.jpg", alt: "finance", repo: "https://github.com/user/finance" },
-    { title: "Orizon", category: "Web development", image: "/assets/images/project-2.png", alt: "orizon", repo: "https://github.com/user/orizon" },
-    { title: "Fundo", category: "Web design", image: "/assets/images/project-3.jpg", alt: "fundo", repo: "https://github.com/user/fundo" },
-    { title: "Brawlhalla", category: "Applications", image: "/assets/images/project-4.png", alt: "brawlhalla", repo: "https://github.com/user/brawlhalla" },
-    { title: "DSM.", category: "Web design", image: "/assets/images/project-5.png", alt: "dsm.", repo: "https://github.com/user/dsm" },
-    { title: "MetaSpark", category: "Web design", image: "/assets/images/project-6.png", alt: "metaspark", repo: "https://github.com/user/metaspark" },
-    { title: "Summary", category: "Web development", image: "/assets/images/project-7.png", alt: "summary", repo: "https://github.com/user/summary" },
-    { title: "Task Manager", category: "Applications", image: "/assets/images/project-8.jpg", alt: "task manager", repo: "https://github.com/user/task-manager" },
-    { title: "Arrival", category: "Web development", image: "/assets/images/project-9.png", alt: "arrival", repo: "https://github.com/user/arrival" },
+    { title: "Recorrido virtual sobre escenarios turisticos de la ciudad de Riobamba", 
+    category: "VR",
+     image: "/assets/images/project-1.jpg",
+      alt: "finance",
+      repo: "youtube.com/watch?v=3J5ZmO6B_2A&feature=youtu.be",
+      description: 'Aplicativo para computadoras y gafas de realidad virtual compuesto de dos modos de juego: Videojuego y Recorrido virtual. Se recrearon 4 lugares turisticos de la ciudad de Riobamba aplicando tecnicas de gamificación y de inteligencia artificial para simular realismo en los espacios. Incluye un sistema de recomendaciones y un guía virtual en el recorrido turistico.'
+     },
+    { title: "Sistema de Reservas de Hotel - Backend",
+     category: "Backend",
+      image: "/assets/images/project-2.png",
+       alt: "Sistema de Reservas de Hotel - Backend",
+        repo: "https://github.com/BryanGuapulema/hotel_reservation_backend",
+         description: "API RESTful para gestión de reservas de hotel con Node.js, Express y MongoDB. Incluye autenticación con JWT, control de roles (user / admin), manejo de habitaciones y reservas, y validación de datos con Zod. Backend seguro, escalable y diseñado con MVC."},
+    { 
+      title: "Gestor de Recetas de Cocina",
+      category: "Backend",
+      image: "/assets/images/project-3.jpg",
+      alt: "Gestor de Recetas de Cocina",
+      repo: "https://github.com/BryanGuapulema/recipe_fullstack",
+      description: "API RESTful construida con Node.js y Express siguiendo el patrón Modelo-Vista-Controlador (MVC). Permite gestionar recetas con CRUD completo, búsquedas y filtros por título, ingrediente, dificultad o tiempo de preparación. Comenzó usando un archivo JSON como base de datos y luego se migró a MySQL. Incluye validaciones con Zod y un frontend básico en HTML, CSS y JS para crear, editar, eliminar y filtrar recetas dinámicamente."},         
+      {
+        title: "Gestor de Libros",
+        category: "Fullstack",
+        image: "/assets/images/project-4.png",
+         alt: "Gestor de Libros",
+          repo: "https://github.com/BryanGuapulema/book_exercise" ,
+           description: "Aplicación fullstack en Node.js/Express con validaciones Zod, que permite gestionar libros con CRUD completo y búsquedas por autor o género. Usa un archivo JSON como base de datos y un frontend en HTML y JS para listar, agregar, editar y eliminar libros. Configurada para desplegar frontend y backend con un solo comando."},
   ]
 } = Astro.props;
 ---
@@ -52,7 +70,13 @@ const {
     <!-- Project List -->
     <ul class="project-list">
       {projects.map(project => (
-        <li class="project-item active" data-filter-item data-category={project.category.toLowerCase()} data-repo={project.repo}>
+        <li 
+          class="project-item active" 
+          data-filter-item 
+          data-category={project.category.toLowerCase()} 
+          data-repo={project.repo}
+          data-description={project.description}
+        >
           <a href="#">
             <figure class="project-img">
               <div class="project-item-icon-box">
@@ -86,8 +110,8 @@ const {
 
       <div class="modal-content">
         <h4 class="h3 modal-title" data-modal-title></h4>
-        <p data-modal-text></p>
-        <a href="#" class="modal-repo-btn" target="_blank" data-modal-repo>View Repository</a>
+        <p class="modal-description" data-modal-text></p>
+        <a href="#" class="modal-repo-btn" target="_blank" data-modal-repo>Ver Proyecto</a>
       </div>
     </section>
   </div>
