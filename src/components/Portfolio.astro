@@ -4,28 +4,28 @@ const {
   projects = [
     { title: "Recorrido virtual sobre escenarios turisticos de la ciudad de Riobamba", 
     category: "VR",
-     image: "/assets/images/project-1.jpg",
+     image: "/assets/images/project.png",
       alt: "finance",
       repo: "https://www.youtube.com/watch?v=3J5ZmO6B_2A&feature=youtu.be",
       description: 'Aplicativo para computadoras y gafas de realidad virtual compuesto de dos modos de juego: Videojuego y Recorrido virtual. Se recrearon 4 lugares turisticos de la ciudad de Riobamba aplicando tecnicas de gamificación y de inteligencia artificial para simular realismo en los espacios. Incluye un sistema de recomendaciones y un guía virtual en el recorrido turistico.'
      },
     { title: "Sistema de Reservas de Hotel - Backend",
      category: "Backend",
-      image: "/assets/images/project-2.png",
+      image: "/assets/images/hotel_reservation.png",
        alt: "Sistema de Reservas de Hotel - Backend",
         repo: "https://github.com/BryanGuapulema/hotel_reservation_backend",
          description: "API RESTful para gestión de reservas de hotel con Node.js, Express y MongoDB. Incluye autenticación con JWT, control de roles (user / admin), manejo de habitaciones y reservas, y validación de datos con Zod. Backend seguro, escalable y diseñado con MVC."},
     { 
       title: "Gestor de Recetas de Cocina",
       category: "Backend",
-      image: "/assets/images/project-3.jpg",
+      image: "/assets/images/recipes.PNG",
       alt: "Gestor de Recetas de Cocina",
       repo: "https://github.com/BryanGuapulema/recipe_fullstack",
       description: "API RESTful construida con Node.js y Express siguiendo el patrón Modelo-Vista-Controlador (MVC). Permite gestionar recetas con CRUD completo, búsquedas y filtros por título, ingrediente, dificultad o tiempo de preparación. Comenzó usando un archivo JSON como base de datos y luego se migró a MySQL. Incluye validaciones con Zod y un frontend básico en HTML, CSS y JS para crear, editar, eliminar y filtrar recetas dinámicamente."},         
       {
         title: "Gestor de Libros",
         category: "Fullstack",
-        image: "/assets/images/project-4.png",
+        image: "/assets/images/book.PNG",
          alt: "Gestor de Libros",
           repo: "https://github.com/BryanGuapulema/book_exercise" ,
            description: "Aplicación fullstack en Node.js/Express con validaciones Zod, que permite gestionar libros con CRUD completo y búsquedas por autor o género. Usa un archivo JSON como base de datos y un frontend en HTML y JS para listar, agregar, editar y eliminar libros. Configurada para desplegar frontend y backend con un solo comando."},
@@ -82,7 +82,7 @@ const {
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline"></ion-icon>
               </div>
-              <img src={project.image} alt={project.alt} loading="lazy" />
+              <img height="300px" src={project.image} alt={project.alt} loading="lazy" />
             </figure>
             <h3 class="project-title">{project.title}</h3>
             <p class="project-category">{project.category}</p>
