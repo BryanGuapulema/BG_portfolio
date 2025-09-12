@@ -1104,7 +1104,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box { border-radius: 30px; }
+  .avatar-box { border-radius: 60px; }
 
   .avatar-box img { width: 120px; }
 
@@ -1498,7 +1498,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { flex-direction: column; }
 
-  .avatar-box img { width: 150px; }
+  .avatar-box img { width: 150px;  }
 
   .info-content .name {
     white-space: nowrap;
