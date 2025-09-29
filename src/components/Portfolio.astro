@@ -2,52 +2,71 @@
 const {
   categories = ["Todo", "Backend", "VR", "Fullstack"],
   projects = [
-    { title: "Recorrido virtual sobre escenarios turisticos de la ciudad de Riobamba", 
-    category: "VR",
-     image: "/assets/images/project.png",
-      alt: "finance",
+
+    { 
+      title: "Recorrido virtual sobre escenarios turisticos de la ciudad de Riobamba", 
+      category: "VR",
+      image: "/assets/images/project.png",
+      alt: "Recorrido virtual sobre escenarios turisticos de la ciudad de Riobamba",
       repo: "https://www.youtube.com/watch?v=3J5ZmO6B_2A&feature=youtu.be",
       description: 'Aplicativo para computadoras y gafas de realidad virtual compuesto de dos modos de juego: Videojuego y Recorrido virtual. Se recrearon 4 lugares turisticos de la ciudad de Riobamba aplicando tecnicas de gamificación y de inteligencia artificial para simular realismo en los espacios. Incluye un sistema de recomendaciones y un guía virtual en el recorrido turistico.'
-     },
-    { title: "Sistema de Reservas de Hotel - Backend",
-     category: "Backend",
-      image: "/assets/images/social-media.jpg",
-       alt: "Sistema de Reservas de Hotel - Backend",
-        repo: "https://github.com/BryanGuapulema/hotel_reservation_backend",
-         description: "API RESTful para gestión de reservas de hotel con Node.js, Express y MongoDB. Incluye autenticación con JWT, control de roles (user / admin), manejo de habitaciones y reservas, y validación de datos con Zod. Backend seguro, escalable y diseñado con MVC."
     },
-    {
+
+    { 
+      title: "Project-Management-API", 
+      category: "Backend",
+      image: "/assets/images/project.png",
+      alt: "Project-Management-API",
+      repo: "https://github.com/BryanGuapulema/Project-Management-API",
+      description: 'Node.js, Express, MongoDB API REST para gestión de proyectos colaborativos con autenticación JWT, control de roles (admin / user), validaciones con Zod y manejo centralizado de errores. Incluye CRUD de usuarios, boards, listas y tareas, con control de acceso por ownership y servicios desacoplados para la lógica de negocio..'
+    },
+
+
+     
+     {
       title: "Public Transport API - Backend",
       category: "Backend",
       image: "/assets/images/trasnport.png",
-       alt: "Public Transport API - Backend",
-        repo: "https://github.com/BryanGuapulema/transportTracking",
-         description: "Backend desarrollado con Node.js, Express y MongoDB. Diseñado para gestionar y consultar en tiempo real el estado del transporte público de una ciudad. Permite acceder a información de líneas, estaciones, vehículos, horarios e incidentes, con autenticación JWT y roles de usuario para operadores y administradores. Es un proyecto pensado para mostrar buenas prácticas en el diseño de APIs REST y servir como base para aplicaciones de movilidad urbana."
+      alt: "Public Transport API - Backend",
+      repo: "https://github.com/BryanGuapulema/transportTracking",
+      description: "Backend desarrollado con Node.js, Express y MongoDB. Diseñado para gestionar y consultar en tiempo real el estado del transporte público de una ciudad. Permite acceder a información de líneas, estaciones, vehículos, horarios e incidentes, con autenticación JWT y roles de usuario para operadores y administradores. Es un proyecto pensado para mostrar buenas prácticas en el diseño de APIs REST y servir como base para aplicaciones de movilidad urbana."
     },
-    {
 
-title: "Social Media API - Backend",
+    { 
+      title: "Sistema de Reservas de Hotel - Backend",
+      category: "Backend",
+      image: "/assets/images/social-media.jpg",
+      alt: "Sistema de Reservas de Hotel - Backend",
+      repo: "https://github.com/BryanGuapulema/hotel_reservation_backend",
+      description: "API RESTful para gestión de reservas de hotel con Node.js, Express y MongoDB. Incluye autenticación con JWT, control de roles (user / admin), manejo de habitaciones y reservas, y validación de datos con Zod. Backend seguro, escalable y diseñado con MVC."
+    },
+
+    {
+      title: "Social Media API - Backend",
       category: "Backend",
       image: "/assets/images/social-media.png",
-       alt: "Social Media API - Backend",
-        repo: "https://github.com/BryanGuapulema/social-media-api",
-         description: "Este proyecto es una API de red social desarrollada en Node.js, que implementa las funcionalidades esenciales de una plataforma social. Permite gestionar usuarios, publicaciones e interacciones sociales, ofreciendo operaciones como crear, editar y eliminar posts, seguir y dejar de seguir usuarios, dar o quitar “me gusta” y añadir comentarios. La arquitectura expone endpoints bien definidos que devuelven información estructurada sobre perfiles, publicaciones e interacciones, sirviendo como un backend robusto y escalable para aplicaciones sociales modernas."
-
+      alt: "Social Media API - Backend",
+      repo: "https://github.com/BryanGuapulema/social-media-api",
+      description: "Este proyecto es una API de red social desarrollada en Node.js, que implementa las funcionalidades esenciales de una plataforma social. Permite gestionar usuarios, publicaciones e interacciones sociales, ofreciendo operaciones como crear, editar y eliminar posts, seguir y dejar de seguir usuarios, dar o quitar “me gusta” y añadir comentarios. La arquitectura expone endpoints bien definidos que devuelven información estructurada sobre perfiles, publicaciones e interacciones, sirviendo como un backend robusto y escalable para aplicaciones sociales modernas."
     },
+
     { 
       title: "Gestor de Recetas de Cocina",
       category: "Backend",
       image: "/assets/images/recipes.PNG",
       alt: "Gestor de Recetas de Cocina",
       repo: "https://github.com/BryanGuapulema/recipe_fullstack",
-      description: "API RESTful construida con Node.js y Express siguiendo el patrón Modelo-Vista-Controlador (MVC). Permite gestionar recetas con CRUD completo, búsquedas y filtros por título, ingrediente, dificultad o tiempo de preparación. Comenzó usando un archivo JSON como base de datos y luego se migró a MySQL. Incluye validaciones con Zod y un frontend básico en HTML, CSS y JS para crear, editar, eliminar y filtrar recetas dinámicamente."},         
-      {
-        title: "Gestor de Libros",
-        category: "Fullstack",
-        image: "/assets/images/book.PNG",
-         alt: "Gestor de Libros",
-          repo: "https://github.com/BryanGuapulema/book_exercise" ,
-           description: "Aplicación fullstack en Node.js/Express con validaciones Zod, que permite gestionar libros con CRUD completo y búsquedas por autor o género. Usa un archivo JSON como base de datos y un frontend en HTML y JS para listar, agregar, editar y eliminar libros. Configurada para desplegar frontend y backend con un solo comando."},
+      description: "API RESTful construida con Node.js y Express siguiendo el patrón Modelo-Vista-Controlador (MVC). Permite gestionar recetas con CRUD completo, búsquedas y filtros por título, ingrediente, dificultad o tiempo de preparación. Comenzó usando un archivo JSON como base de datos y luego se migró a MySQL. Incluye validaciones con Zod y un frontend básico en HTML, CSS y JS para crear, editar, eliminar y filtrar recetas dinámicamente."
+    },
+
+    {
+      title: "Gestor de Libros",
+      category: "Fullstack",
+      image: "/assets/images/book.PNG",
+      alt: "Gestor de Libros",
+      repo: "https://github.com/BryanGuapulema/book_exercise" ,
+      description: "Aplicación fullstack en Node.js/Express con validaciones Zod, que permite gestionar libros con CRUD completo y búsquedas por autor o género. Usa un archivo JSON como base de datos y un frontend en HTML y JS para listar, agregar, editar y eliminar libros. Configurada para desplegar frontend y backend con un solo comando."
+    }    
   ]
 } = Astro.props;
 ---
